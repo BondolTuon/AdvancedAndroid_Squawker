@@ -34,6 +34,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -85,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements
 
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey("Name")) {
+            Toast.makeText(this, extras.getString("Name"), Toast.LENGTH_SHORT).show();
+        }
 
     }
 
