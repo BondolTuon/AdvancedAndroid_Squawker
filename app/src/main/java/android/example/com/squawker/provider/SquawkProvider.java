@@ -29,7 +29,8 @@ import net.simonvt.schematic.annotation.TableEndpoint;
 
 @ContentProvider(
         authority = SquawkProvider.AUTHORITY,
-        database = SquawkDatabase.class)
+        database = SquawkDatabase.class
+)
 public final class SquawkProvider {
 
     public static final String AUTHORITY = "android.example.com.squawker.provider.provider";
